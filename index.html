@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003c34">
+
     <title>MesRanges - Android</title>
 
     <style>
@@ -13,19 +15,27 @@
         body {
             margin: 0;
             min-height: 100vh;
+            padding: 24px;
             font-family: Arial, Helvetica, sans-serif;
             background: #003c34;
             color: white;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px;
         }
 
         .container {
             width: 100%;
             max-width: 520px;
             text-align: center;
+        }
+
+        .logo {
+            width: 145px;
+            max-width: 42vw;
+            height: auto;
+            margin-bottom: 4px;
         }
 
         h1 {
@@ -35,9 +45,9 @@
 
         .suits {
             color: #f2c94c;
-            font-size: 24px;
+            font-size: 23px;
             letter-spacing: 8px;
-            margin: 10px 0 25px;
+            margin: 8px 0 25px;
         }
 
         .card {
@@ -49,21 +59,26 @@
         }
 
         h2 {
+            margin: 0 0 18px;
             color: #f2c94c;
-            margin-top: 0;
             font-size: 25px;
         }
 
         .description {
-            color: #d7e5e2;
+            margin: 0 auto 20px;
+            color: #e1ecea;
             line-height: 1.6;
-            margin: 18px 0;
         }
 
         .version {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 7px 14px;
+            border: 1px solid #dca514;
+            border-radius: 20px;
+            color: #f2c94c;
             font-size: 14px;
-            color: #b7ccc8;
-            margin-bottom: 25px;
+            font-weight: bold;
         }
 
         .download {
@@ -85,16 +100,74 @@
         }
 
         .info {
-            margin-top: 22px;
+            margin-top: 20px;
+            color: #b9d0cc;
             font-size: 13px;
-            color: #abc3bf;
+            line-height: 1.5;
+        }
+
+        .separator {
+            width: 75%;
+            height: 1px;
+            margin: 26px auto;
+            background: #287167;
+        }
+
+        .qr-title {
+            margin-bottom: 15px;
+            color: #f2c94c;
+            font-weight: bold;
+        }
+
+        #qrcode {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 10px;
+            background: white;
+        }
+
+        #qrcode img,
+        #qrcode canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .qr-text {
+            margin: 14px 0 0;
+            color: #b9d0cc;
+            font-size: 13px;
             line-height: 1.5;
         }
 
         footer {
-            margin-top: 25px;
+            margin-top: 24px;
+            color: #8eb0aa;
             font-size: 12px;
-            color: #89aaa4;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 18px;
+                align-items: flex-start;
+            }
+
+            .container {
+                margin-top: 12px;
+            }
+
+            .logo {
+                width: 115px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .card {
+                padding: 25px 18px;
+            }
         }
     </style>
 </head>
@@ -102,6 +175,11 @@
 <body>
 
 <div class="container">
+
+    <img
+        class="logo"
+        src="poker_chips.png"
+        alt="Logo MesRanges">
 
     <h1>MesRanges</h1>
 
@@ -117,11 +195,12 @@
         </p>
 
         <div class="version">
-            Version Android
+            Version 1.0.0
         </div>
 
-        <a class="download"
-           href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Fr.Neo.RangesPoker.apk">
+        <a
+            class="download"
+            href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Fr.Neo.RangesPoker.apk">
             Télécharger pour Android
         </a>
 
@@ -131,6 +210,19 @@
             provenant de votre navigateur.
         </div>
 
+        <div class="separator"></div>
+
+        <div class="qr-title">
+            Installer MesRanges sur votre téléphone
+        </div>
+
+        <div id="qrcode"></div>
+
+        <p class="qr-text">
+            Scannez ce QR code avec votre téléphone.<br>
+            Il ouvre toujours la page officielle de téléchargement MesRanges.
+        </p>
+
     </div>
 
     <footer>
@@ -138,6 +230,17 @@
     </footer>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://neonlpc.github.io/MesRanges-Android/",
+        width: 160,
+        height: 160,
+        correctLevel: QRCode.CorrectLevel.H
+    });
+</script>
 
 </body>
 </html>

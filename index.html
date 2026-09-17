@@ -229,7 +229,7 @@
             vous entraîner et accompagner vos sessions Live.
         </div>
 
-        <div class="version">Version 1.0.0</div>
+        <div class="version" id="app-version">Version 1.0.0</div>
 
         <div class="platform-title">Android</div>
 
@@ -310,12 +310,45 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
+    // QR Code
     new QRCode(document.getElementById("qrcode"), {
         text: "https://neonlpc.github.io/MesRanges-Android/",
         width: 160,
         height: 160,
         correctLevel: QRCode.CorrectLevel.H
     });
+
+    // Récupération automatique de la dernière version GitHub
+    async function updateVersion() {
+        try {
+            const response = await fetch(
+                "https://api.github.com/repos/NeoNLPC/MesRanges-Android/releases/latest"
+            );
+
+            if (!response.ok) {
+                throw new Error("Impossible de récupérer la dernière version");
+            }
+
+            const release = await response.json();
+
+            // Exemple : V1.0.1 -> 1.0.1
+            const version = release.tag_name.replace(/^v/i, "");
+
+            document.getElementById("app-version").textContent =
+                "Version " + version;
+
+        } catch (error) {
+            console.error(
+                "Impossible de récupérer la version GitHub :",
+                error
+            );
+
+            // En cas d'erreur, la valeur HTML "Version 1.0.0"
+            // reste simplement affichée.
+        }
+    }
+
+    updateVersion();
 </script>
 
 </body>

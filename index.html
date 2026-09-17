@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#004b40">
 
     <title>MesRanges - Téléchargement</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -24,7 +23,7 @@
 
         .page {
             width: 100%;
-            max-width: 560px;
+            max-width: 600px;
             padding: 30px 20px;
             text-align: center;
         }
@@ -43,8 +42,7 @@
         }
 
         .suits {
-            margin-top: 10px;
-            margin-bottom: 28px;
+            margin: 10px 0 28px;
             color: #ffc928;
             font-size: 22px;
             letter-spacing: 10px;
@@ -55,11 +53,11 @@
             border: 1px solid #168878;
             border-radius: 18px;
             padding: 28px 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,.18);
         }
 
         h2 {
-            margin-top: 0;
-            margin-bottom: 18px;
+            margin: 0 0 18px;
             color: #ffc928;
             font-size: 25px;
         }
@@ -75,32 +73,8 @@
             color: #ffc928;
             border-radius: 20px;
             padding: 7px 16px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             font-weight: bold;
-        }
-
-        .download {
-            display: block;
-            width: 100%;
-            padding: 15px 18px;
-            margin-top: 12px;
-
-            background: #e8ad0c;
-            color: #000;
-
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-
-            border-radius: 10px;
-
-            transition: transform 0.15s ease,
-                        background 0.15s ease;
-        }
-
-        .download:hover {
-            background: #ffc928;
-            transform: translateY(-1px);
         }
 
         .platform-title {
@@ -111,18 +85,86 @@
             font-weight: bold;
         }
 
+        .download {
+            display: block;
+            width: 100%;
+            padding: 15px 18px;
+            margin-top: 12px;
+            background: #e8ad0c;
+            color: #102b27;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: transform .15s ease, background .15s ease;
+        }
+
+        .download:hover {
+            background: #ffc928;
+            transform: translateY(-1px);
+        }
+
         .info {
             margin-top: 10px;
             color: #d4ebe6;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.55;
         }
 
         .separator {
             height: 1px;
             background: #28786c;
-            margin: 28px auto;
-            width: 75%;
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        .range-box {
+            background: #064f45;
+            border: 1px solid #278276;
+            border-radius: 14px;
+            padding: 22px 18px;
+            text-align: left;
+        }
+
+        .range-box h3 {
+            margin: 0 0 8px;
+            color: #ffc928;
+            text-align: center;
+            font-size: 21px;
+        }
+
+        .range-count {
+            text-align: center;
+            color: #d4ebe6;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .steps-title {
+            margin: 22px 0 12px;
+            color: #ffc928;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .steps {
+            margin: 0;
+            padding-left: 22px;
+            color: #e5f2ef;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+        .steps li { margin-bottom: 7px; }
+
+        .note {
+            margin-top: 15px;
+            padding: 12px;
+            background: #003f37;
+            border-radius: 9px;
+            color: #cbe2dd;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
         .qr-title {
@@ -132,12 +174,18 @@
             margin-bottom: 15px;
         }
 
-        .qr {
-            width: 165px;
-            max-width: 60%;
+        #qrcode {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto;
+            padding: 10px;
             background: white;
-            padding: 8px;
-            border-radius: 8px;
+            border-radius: 9px;
+        }
+
+        #qrcode img, #qrcode canvas {
+            width: 100% !important;
+            height: 100% !important;
         }
 
         .qr-info {
@@ -154,40 +202,23 @@
         }
 
         @media (max-width: 500px) {
-            .page {
-                padding: 20px 14px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .card {
-                padding: 24px 18px;
-            }
-
-            h2 {
-                font-size: 22px;
-            }
+            body { align-items: flex-start; }
+            .page { padding: 20px 14px; }
+            h1 { font-size: 36px; }
+            .card { padding: 24px 18px; }
+            h2 { font-size: 22px; }
+            .range-box { padding: 20px 15px; }
         }
     </style>
 </head>
 
 <body>
-
 <div class="page">
 
-    <img
-        class="logo"
-        src="poker_chips.png"
-        alt="Logo MesRanges"
-    >
+    <img class="logo" src="poker_chips.png" alt="Logo MesRanges">
 
     <h1>MesRanges</h1>
-
-    <div class="suits">
-        ♠ ♥ ♦ ♣
-    </div>
+    <div class="suits">♠ ♥ ♦ ♣</div>
 
     <div class="card">
 
@@ -198,20 +229,12 @@
             vous entraîner et accompagner vos sessions Live.
         </div>
 
-        <div class="version">
-            Version 1.0.0
-        </div>
+        <div class="version">Version 1.0.0</div>
 
+        <div class="platform-title">Android</div>
 
-        <!-- ANDROID -->
-
-        <div class="platform-title">
-            Android
-        </div>
-
-        <a
-            class="download"
-            href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Fr.Neo.RangesPoker.apk">
+        <a class="download"
+           href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Fr.Neo.RangesPoker.apk">
             Télécharger pour Android
         </a>
 
@@ -221,29 +244,50 @@
             provenant de votre navigateur.
         </div>
 
+        <div class="platform-title">Windows</div>
 
-        <!-- WINDOWS -->
-
-        <div class="platform-title">
-            Windows
-        </div>
-
-        <a
-            class="download"
-            href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/MesRangesWindows.zip">
+        <a class="download"
+           href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/MesRangesWindows.zip">
             Télécharger pour Windows
         </a>
 
         <div class="info">
             Version Windows 64 bits.<br>
-            Décompressez <strong>MesRangesWindows.zip</strong> avant
-            l'installation.<br>
+            Décompressez <strong>MesRangesWindows.zip</strong> avant l'installation.<br>
             La première installation peut nécessiter l'approbation
             du certificat de l'éditeur Neo.
         </div>
 
+        <div class="separator"></div>
 
-        <!-- QR CODE -->
+        <div class="range-box">
+            <h3>Pack de ranges MTT 100 BB</h3>
+
+            <div class="range-count">
+                54 ranges préflop prêtes à être utilisées dans MesRanges
+            </div>
+
+            <a class="download"
+               href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/MesRanges-Pack-100BB.zip">
+                Télécharger le pack 100 BB
+            </a>
+
+            <div class="steps-title">Comment importer les ranges ?</div>
+
+            <ol class="steps">
+                <li>Téléchargez <strong>MesRanges-Pack-100BB.zip</strong>.</li>
+                <li>Ouvrez l'application <strong>MesRanges</strong>.</li>
+                <li>Depuis la page d'accueil, sélectionnez <strong>Importer</strong>.</li>
+                <li>Sélectionnez le fichier ZIP du pack 100 BB que vous venez de télécharger.</li>
+                <li>Validez l'import : les 54 ranges sont alors ajoutées à MesRanges.</li>
+                <li>Ouvrez le module <strong>Ranges</strong> pour consulter et travailler les ranges importées.</li>
+            </ol>
+
+            <div class="note">
+                Le fichier doit rester au format <strong>ZIP</strong> pour l'import :
+                il n'est pas nécessaire de le décompresser avant de le sélectionner dans MesRanges.
+            </div>
+        </div>
 
         <div class="separator"></div>
 
@@ -251,11 +295,7 @@
             Installer MesRanges sur votre téléphone
         </div>
 
-        <img
-            class="qr"
-            src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fneonlpc.github.io%2FMesRanges-Android%2F"
-            alt="QR Code MesRanges"
-        >
+        <div id="qrcode"></div>
 
         <div class="qr-info">
             Scannez ce QR code avec votre téléphone.<br>
@@ -264,11 +304,19 @@
 
     </div>
 
-    <footer>
-        MesRanges • NeoNLPC
-    </footer>
+    <footer>MesRanges • NeoNLPC</footer>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://neonlpc.github.io/MesRanges-Android/",
+        width: 160,
+        height: 160,
+        correctLevel: QRCode.CorrectLevel.H
+    });
+</script>
 
 </body>
 </html>

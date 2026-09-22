@@ -155,7 +155,9 @@
             font-size: 14px;
         }
 
-        .steps li { margin-bottom: 7px; }
+        .steps li {
+            margin-bottom: 7px;
+        }
 
         .note {
             margin-top: 15px;
@@ -183,7 +185,8 @@
             border-radius: 9px;
         }
 
-        #qrcode img, #qrcode canvas {
+        #qrcode img,
+        #qrcode canvas {
             width: 100% !important;
             height: 100% !important;
         }
@@ -213,11 +216,15 @@
 </head>
 
 <body>
+
 <div class="page">
 
-    <img class="logo" src="poker_chips.png" alt="Logo Poker Toolkit">
+    <img class="logo"
+         src="poker_chips.png"
+         alt="Logo Poker Toolkit">
 
     <h1>Poker Toolkit</h1>
+
     <div class="suits">♠ ♥ ♦ ♣</div>
 
     <div class="card">
@@ -229,9 +236,16 @@
             vous entraîner et accompagner vos sessions Live.
         </div>
 
-        <div class="version">Version 1.0.2</div>
+        <div class="version" id="app-version">
+            Version 1.0.2
+        </div>
 
-        <div class="platform-title">Android</div>
+
+        <!-- ANDROID -->
+
+        <div class="platform-title">
+            Android
+        </div>
 
         <a class="download"
            href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Fr.Neo.RangesPoker.apk">
@@ -239,12 +253,18 @@
         </a>
 
         <div class="info">
-            Téléchargement direct de la dernière version de Poker Toolkit<br>
+            Téléchargement direct de la dernière version de Poker Toolkit
+            <br>
             Android peut demander l'autorisation d'installer une application
             provenant de votre navigateur.
         </div>
 
-        <div class="platform-title">Windows</div>
+
+        <!-- WINDOWS -->
+
+        <div class="platform-title">
+            Windows
+        </div>
 
         <a class="download"
            href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/MesRangesWindows.zip">
@@ -252,112 +272,183 @@
         </a>
 
         <div class="info">
-            Version Windows 64 bits.<br>
-            Décompressez <strong>MesRangesWindows.zip</strong> avant l'installation.<br>
+            Version Windows 64 bits.
+            <br>
+            Décompressez <strong>MesRangesWindows.zip</strong>
+            avant l'installation.
+            <br>
             La première installation peut nécessiter l'approbation
             du certificat de l'éditeur Neo.
         </div>
 
+
         <div class="separator"></div>
 
-<div class="range-box">
-    <h3>Pack de ranges MTT</h3>
 
-    <div class="range-count">
-        Ranges préflop 6-max, 8-max et 9-max<br>
-        pour plusieurs profondeurs de tapis
+        <!-- PACK DE RANGES -->
+
+        <div class="range-box">
+
+            <h3>Pack de ranges MTT</h3>
+
+            <div class="range-count">
+                Ranges préflop 6-max, 8-max et 9-max
+                <br>
+                pour plusieurs profondeurs de tapis
+            </div>
+
+            <a class="download"
+               href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Ranges_6-8-9max.zip">
+                Télécharger le pack de ranges
+            </a>
+
+            <div class="steps-title">
+                Comment importer les ranges ?
+            </div>
+
+            <ol class="steps">
+
+                <li>
+                    Téléchargez
+                    <strong>Ranges_6-8-9max.zip</strong>.
+                </li>
+
+                <li>
+                    Ouvrez l'application
+                    <strong>Poker Toolkit</strong>.
+                </li>
+
+                <li>
+                    Depuis la page d'accueil,
+                    sélectionnez <strong>Importer</strong>.
+                </li>
+
+                <li>
+                    Sélectionnez le fichier
+                    <strong>Ranges_6-8-9max.zip</strong>
+                    que vous venez de télécharger.
+                </li>
+
+                <li>
+                    Validez l'import :
+                    les ranges sont automatiquement
+                    ajoutées à Poker Toolkit.
+                </li>
+
+                <li>
+                    Ouvrez le module
+                    <strong>Ranges</strong>
+                    pour les consulter,
+                    les modifier et les travailler.
+                </li>
+
+                <li>
+                    Utilisez le module
+                    <strong>Entraînement</strong>
+                    pour vous exercer à prendre
+                    les bonnes décisions à partir
+                    des ranges importées.
+                </li>
+
+            </ol>
+
+            <div class="note">
+                Le fichier doit rester au format
+                <strong>ZIP</strong> pour l'import.
+                Il n'est pas nécessaire de le décompresser
+                avant de le sélectionner dans Poker Toolkit.
+            </div>
+
+        </div>
+
+
+        <!-- QR CODE -->
+
+        <div class="separator"></div>
+
+        <div class="qr-title">
+            Installer Poker Toolkit sur votre téléphone
+        </div>
+
+        <div id="qrcode"></div>
+
+        <div class="qr-info">
+            Scannez ce QR code avec votre téléphone.
+            <br>
+            Il ouvre toujours la page officielle
+            de téléchargement Poker Toolkit.
+        </div>
+
     </div>
 
-    <a class="download"
-       href="https://github.com/NeoNLPC/MesRanges-Android/releases/latest/download/Ranges_6-8-9max.zip">
-        Télécharger le pack de ranges
-    </a>
 
-    <div class="steps-title">Comment importer les ranges ?</div>
-
-    <ol class="steps">
-        <li>
-            Téléchargez <strong>Ranges_6-8-9max.zip</strong>.
-        </li>
-        <li>
-            Ouvrez l'application <strong>Poker Toolkit</strong>.
-        </li>
-        <li>
-            Depuis la page d'accueil, sélectionnez
-            <strong>Importer</strong>.
-        </li>
-        <li>
-            Sélectionnez le fichier
-            <strong>Ranges_6-8-9max.zip</strong>
-            que vous venez de télécharger.
-        </li>
-        <li>
-            Validez l'import : les ranges sont automatiquement
-            ajoutées à Poker Toolkit.
-        </li>
-        <li>
-            Ouvrez le module <strong>Ranges</strong>
-            pour les consulter, les modifier et les travailler.
-        </li>
-        <li>
-            Utilisez le module <strong>Entraînement</strong>
-            pour vous exercer à prendre les bonnes décisions
-            à partir des ranges importées.
-        </li>
-    </ol>
-
-    <div class="note">
-        Le fichier doit rester au format <strong>ZIP</strong>
-        pour l'import. Il n'est pas nécessaire de le décompresser
-        avant de le sélectionner dans Poker Toolkit.
-    </div>
-</div>
-
-    <footer>Poker Toolkit • NeoNLPC</footer>
+    <footer>
+        Poker Toolkit • NeoNLPC
+    </footer>
 
 </div>
+
+
+<!-- QR CODE -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
-    // QR Code
-    new QRCode(document.getElementById("qrcode"), {
-        text: "https://neonlpc.github.io/MesRanges-Android/",
-        width: 160,
-        height: 160,
-        correctLevel: QRCode.CorrectLevel.H
-    });
+
+    new QRCode(
+        document.getElementById("qrcode"),
+        {
+            text: "https://neonlpc.github.io/MesRanges-Android/",
+            width: 160,
+            height: 160,
+            correctLevel: QRCode.CorrectLevel.H
+        }
+    );
+
 
     // Récupération automatique de la dernière version GitHub
+
     async function updateVersion() {
+
         try {
+
             const response = await fetch(
                 "https://api.github.com/repos/NeoNLPC/MesRanges-Android/releases/latest"
             );
 
             if (!response.ok) {
-                throw new Error("Impossible de récupérer la dernière version");
+                throw new Error(
+                    "Impossible de récupérer la dernière version"
+                );
             }
 
             const release = await response.json();
 
-            // Exemple : V1.0.1 -> 1.0.1
-            const version = release.tag_name.replace(/^v/i, "");
+            // Exemple : V1.0.2 -> 1.0.2
 
-            document.getElementById("app-version").textContent =
+            const version =
+                release.tag_name.replace(/^v/i, "");
+
+            document
+                .getElementById("app-version")
+                .textContent =
                 "Version " + version;
 
-        } catch (error) {
+        }
+        catch (error) {
+
             console.error(
                 "Impossible de récupérer la version GitHub :",
                 error
             );
 
-            // En cas d'erreur, la valeur HTML "Version 1.0.0"
-            // reste simplement affichée.
+            // En cas d'erreur,
+            // Version 1.0.2 reste affichée.
         }
     }
 
     updateVersion();
+
 </script>
 
 </body>
